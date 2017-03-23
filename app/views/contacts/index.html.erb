@@ -1,0 +1,15 @@
+<% if current_user %>
+  <h3>Hi <%= current_user.name %>!</h3>
+<% end %>
+
+<h1>All Contacts:</h1>
+<p></p>
+<a href="/contacts/new">Create new contact</a>
+<% @contacts.each do |contact| %>
+  <p>--------------------------------</p>
+  <h2><%= contact.first_name %> <%= contact.middle_name %> <%=contact.last_name %></h2>
+  <h3><%= contact.email %></h3>
+  <h3><%= contact.phone_number %></h3>
+  <h6>Added <%= contact.friendly_created_at %></h6>
+  <p><%= link_to "Edit", "/contacts/#{contact.id}/edit" %>/<%= link_to "Delete", "/contacts/#{contact.id}", method: :delete %></p>
+<% end %>

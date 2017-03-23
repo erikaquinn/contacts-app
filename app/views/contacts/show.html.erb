@@ -1,0 +1,11 @@
+<h1>Contact Info:</h1>
+<p></p>
+<h2><%= @contact.first_name %> <%= @contact.middle_name %> <%= @contact.last_name %></h3>
+<p><%= @contact.email %></p>
+<p><%= @contact.phone_number %></p>
+<p></p>
+<p><%= link_to "Edit contact", "/contacts/#{@contact.id}/edit" %></p>
+<p><%= link_to "Create new contact", "/contacts/new", method: :get %></p>
+<p><%= link_to "Destroy contact", "/contacts/#{@contact.id}", method: :delete %></p>
+<p><a href="/">Back to all contacts</a></p>
+
